@@ -28,7 +28,6 @@ cc_binary(
           ":lib_thp",
           "@glog//:glog",
           "@yaml-cpp//:yaml-cpp",
-          "@spdlog//:spdlog"
          ],
   #malloc = "@com_google_tcmalloc//tcmalloc",
   visibility = ["//visibility:public"],

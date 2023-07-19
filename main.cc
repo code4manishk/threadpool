@@ -21,12 +21,11 @@ limitations under the License.
 #include <forward_list>
 #include <ranges>
 #include <iterator>
+#include <cmath>
 
 #include <gflags/gflags.h>
 #include <glog/logging.h>
 #include <glog/stl_logging.h>
-
-#include "spdlog/spdlog.h"
 
 #include "include/partitioner.hpp"
 #include "include/task_type.hpp"
@@ -82,7 +81,7 @@ void system_async(size_t n, std::ostream& oss) {
 std::optional<size_t> is_prime(size_t n) {
   if (n < 2) return std::nullopt;
 
-  auto m = sqrt(n);
+  auto m = std::sqrt(n);
   for(auto i = 2; i <= m; ++i)
     if (n%i == 0) return {};
 
@@ -148,7 +147,7 @@ int collect_stats(int argc, const char* const argv[])
       std::cout << oss.str();
       std::fstream f(filename, ios::out);
       if (!f.is_open()) {
-        spdlog::info("failed to open {}", filename);
+        std::cerr << "failed to open " << filename << std::endl;
       } else {
         f << oss.str();
         f.close();

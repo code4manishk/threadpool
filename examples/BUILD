@@ -22,7 +22,7 @@ cc_binary(
 cc_binary(
   name = "reduce",
   srcs  = ["reduce.cpp"],
-  copts = ["-I/usr/include/tbb",] + cxx_flags,
+  copts = cxx_flags,
   deps = ["//:lib_algo_stl"],
   linkopts = link_flags,
   #malloc = "@com_google_tcmalloc//tcmalloc",
@@ -45,7 +45,7 @@ cc_binary(
   srcs = ["sort.cpp"],
   copts = cxx_flags + ["-fopenmp"],
   deps = ["//:lib_algo_stl"],
-  linkopts = link_flags + ["-ltbb"],
+  linkopts = link_flags,
   #malloc = "@com_google_tcmalloc//tcmalloc",
   visibility = ["//visibility:public"],
 )

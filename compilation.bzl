@@ -1,5 +1,5 @@
 
-link_flags = ["-lpthread", "-ltbb"]
+link_flags = ["-lpthread"]
 
 thread_sanitizer_flags = ["-fsanitize=thread", "-pie", "-fPIE",]
 

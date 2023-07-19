@@ -115,7 +115,7 @@ public:
     // accumulate
     return __impl_tp.submit([=] (auto&& futs) mutable {
       return std::transform_reduce(futs.begin(), futs.end(), init, rdc_fn,
-               [](auto&& fut) mutable { return std::move(fut.get()); });
+               [](auto&& fut) mutable { return fut.get(); });
       }, std::move(f.get()));
   }
 
