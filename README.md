@@ -25,13 +25,13 @@ A high throughput threadpool implementation with configurable task queues, queue
 ```
 
 # Build
-  Threadpool uses bazel to build workspace and maintain external depenencies, e.g. gtest, spdlog, and requires c++20 support.
+  Threadpool uses bazel to build workspace and maintain external depenencies, e.g. gtest, spdlog, and requires modern c++20 support.
   Additionally, see benchmarks in examples directory.
 
 ```
-  git clone https://github.com/manish-kumar1/threadpool.git
+  git clone --recursive https://github.com/code4manishk/threadpool.git
   cd threadpool
-  bazel build examples:all
+  bazel build //...
   bazel run examples:sort
 ```
   
